@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ocewxoa5156w"]
+[gd_scene load_steps=5 format=3 uid="uid://ocewxoa5156w"]
 
 [ext_resource type="PackedScene" uid="uid://cidspdub7fpf" path="res://Player.tscn" id="1_30b2c"]
 [ext_resource type="PackedScene" uid="uid://k7p5yalxo73k" path="res://MountainBackground.tscn" id="1_avbwp"]
 [ext_resource type="PackedScene" uid="uid://c1x8f5xeaffkl" path="res://LongPlatform.tscn" id="2_ptrmn"]
+[ext_resource type="PackedScene" uid="uid://bbf0ql1jwctsh" path="res://Enemy1.tscn" id="3_pku0l"]
 
 [node name="Scene2" type="Node"]
 
@@ -10,6 +11,9 @@
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_30b2c")]
 position = Vector2(175, 369)
+
+[node name="Enemy1" parent="." instance=ExtResource("3_pku0l")]
+position = Vector2(558, 101)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_ptrmn")]
 position = Vector2(210, 467)
