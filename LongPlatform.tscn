@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1x8f5xeaffkl"]
+
+[ext_resource type="Texture2D" uid="uid://bii751btrkkon" path="res://Assets/Sprites/LongRockPlatform.png" id="1_bxb3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2fpw"]
+size = Vector2(247.921, 33.4261)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(503, 492)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.366, 1.366)
+shape = SubResource("RectangleShape2D_h2fpw")
+debug_color = Color(0.984314, 0, 0.329412, 0.831373)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.500008, -4.61936e-06)
+scale = Vector2(5.32812, 3)
+texture = ExtResource("1_bxb3y")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://iqb711utilwq"]
+
+[ext_resource type="PackedScene" uid="uid://fbomr6dg431s" path="res://DogBullet.tscn" id="1_a68ad"]
+[ext_resource type="PackedScene" uid="uid://k7p5yalxo73k" path="res://MountainBackground.tscn" id="1_liac0"]
+[ext_resource type="PackedScene" uid="uid://c1x8f5xeaffkl" path="res://LongPlatform.tscn" id="1_mm8wh"]
+[ext_resource type="PackedScene" uid="uid://cidspdub7fpf" path="res://Player.tscn" id="2_fmv8t"]
+
+[node name="Scene1" type="Node"]
+
+[node name="MountainBackground" parent="." instance=ExtResource("1_liac0")]
+
+[node name="LongPlatform1" parent="." instance=ExtResource("1_mm8wh")]
+position = Vector2(242, 518)
+
+[node name="LongPlatform2" parent="." instance=ExtResource("1_mm8wh")]
+position = Vector2(598, 453)
+
+[node name="LongPlatform3" parent="." instance=ExtResource("1_mm8wh")]
+position = Vector2(945, 391)
+
+[node name="Player" parent="." instance=ExtResource("2_fmv8t")]
+position = Vector2(163, 432)
+
+[node name="DogBullet" parent="." instance=ExtResource("1_a68ad")]
+position = Vector2(388, 202)

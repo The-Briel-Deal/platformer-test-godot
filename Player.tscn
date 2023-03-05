@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cidspdub7fpf"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_fwt3p"]
+[ext_resource type="Texture2D" uid="uid://bhd5ekagg2bnh" path="res://Assets/Sprites/DogFrame1.png" id="2_ao754"]
+[ext_resource type="Texture2D" uid="uid://c7vpvwg2k54i8" path="res://Assets/Sprites/DogFrame2.png" id="3_gg4hd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r10nb"]
+radius = 9.99998
+height = 28.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nj23x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ao754")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gg4hd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+position = Vector2(470, 250)
+scale = Vector2(2, 2)
+script = ExtResource("1_fwt3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_r10nb")
+debug_color = Color(0.976471, 0, 0.423529, 0.243137)
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -1)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nj23x")
+autoplay = "default"
+frame_progress = 0.698901
+metadata/_edit_lock_ = true

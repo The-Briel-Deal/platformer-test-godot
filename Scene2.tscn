@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ocewxoa5156w"]
+
+[ext_resource type="PackedScene" uid="uid://cidspdub7fpf" path="res://Player.tscn" id="1_30b2c"]
+[ext_resource type="PackedScene" uid="uid://k7p5yalxo73k" path="res://MountainBackground.tscn" id="1_avbwp"]
+[ext_resource type="PackedScene" uid="uid://c1x8f5xeaffkl" path="res://LongPlatform.tscn" id="2_ptrmn"]
+
+[node name="Scene2" type="Node"]
+
+[node name="MountainBackground" parent="." instance=ExtResource("1_avbwp")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_30b2c")]
+position = Vector2(175, 369)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_ptrmn")]
+position = Vector2(210, 467)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_ptrmn")]
+position = Vector2(927, 465)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_ptrmn")]
+position = Vector2(572, 379)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_ptrmn")]
+position = Vector2(569, 552)
