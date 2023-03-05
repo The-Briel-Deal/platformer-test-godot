@@ -13,8 +13,9 @@ func _process(delta):
 		time_elapsed_since_last_shoot = 0
 		var projectile = preload("res://EnemyBullet.tscn")
 		var instance = projectile.instantiate()
-		get_parent().add_child(instance)
 		instance.position.x = position.x
 		instance.position.y = position.y
+		get_parent().add_child(instance)
+		
 		
 	
