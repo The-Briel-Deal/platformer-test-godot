@@ -6,8 +6,8 @@ var moving_forward: bool
 func _ready():
 	var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 	
-	position.x = 100
-	position.y = 100
+	position.x = player.position.x
+	position.y = player.position.y
 	
 	if player.get_node("Sprite").flip_h:
 		moving_forward = false

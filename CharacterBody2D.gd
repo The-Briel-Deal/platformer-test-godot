@@ -43,6 +43,8 @@ func _physics_process(delta):
 	elif velocity.x > 0:
 		sprite.flip_h = false
 	if Input.is_action_just_pressed("shoot"):
-		var projectile = load("res://DogBullet.tscn")
+		var projectile = preload("res://DogBullet.tscn")
+		var instance = projectile.instantiate()
+		get_parent().add_child(instance)
 
 	move_and_slide()
