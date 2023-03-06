@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_tejqv"]
 radius = 1.5
 
-[node name="EnemyBullet" type="Area2D"]
+[node name="EnemyBullet" type="Area2D" groups=["enemy_bullets"]]
 scale = Vector2(6, 6)
 script = ExtResource("1_yoh6a")
 

@@ -10,9 +10,7 @@ var direction: Vector2 = Vector2()
 func _ready():
 	var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 	direction = ( player.position - position ).normalized()
-	print(direction)
-	print(player.position)
-	print(position)
+	connect("body_entered", player.on_bullet_collision)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

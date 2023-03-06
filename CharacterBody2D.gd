@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var sprite: AnimatedSprite2D
@@ -48,3 +47,10 @@ func _physics_process(delta):
 		get_parent().add_child(instance)
 
 	move_and_slide()
+
+func on_bullet_collision(body: Node2D):
+	if "player" in body.get_groups():
+		get_tree().change_scene_to_file("res://Scene1.tscn")
+		PlayerVariables.curr_scene = 1
+		PlayerVariables.x_position = 163
+		PlayerVariables.y_position = 300
