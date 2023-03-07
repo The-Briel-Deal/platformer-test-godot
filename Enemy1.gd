@@ -17,5 +17,6 @@ func _process(delta):
 		instance.position.y = position.y
 		get_parent().add_child(instance)
 		
-		
-	
+func on_bullet_collision(body: Node2D):
+	if get_instance_id() == body.get_instance_id():
+		queue_free()
