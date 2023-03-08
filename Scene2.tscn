@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ocewxoa5156w"]
+[gd_scene load_steps=6 format=3 uid="uid://ocewxoa5156w"]
 
 [ext_resource type="PackedScene" uid="uid://cidspdub7fpf" path="res://Player.tscn" id="1_30b2c"]
 [ext_resource type="PackedScene" uid="uid://k7p5yalxo73k" path="res://MountainBackground.tscn" id="1_avbwp"]
 [ext_resource type="PackedScene" uid="uid://c1x8f5xeaffkl" path="res://LongPlatform.tscn" id="2_ptrmn"]
 [ext_resource type="PackedScene" uid="uid://bbf0ql1jwctsh" path="res://Enemy1.tscn" id="3_pku0l"]
+[ext_resource type="AudioStream" uid="uid://p7noesh3aqjj" path="res://Assets/Audio/VoiceLines/EscargoIntroduction.mp3" id="5_26opq"]
 
 [node name="Scene2" type="Node"]
 
@@ -44,3 +45,7 @@ position = Vector2(1002, 387)
 
 [node name="Enemy4" parent="." instance=ExtResource("3_pku0l")]
 position = Vector2(277, 215)
+
+[node name="EscargoIntroVoiceLine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_26opq")
+autoplay = true

@@ -16,6 +16,13 @@ func _ready():
 	
 	for enemy in enemys:
 		connect("area_entered", enemy.on_bullet_collision)
+	var bark_file = FileAccess.open("res://Assets/Audio/VoiceLines/Bark.mp3", FileAccess.READ)
+	var bark = AudioStreamPlayer.new()
+	bark.stream = AudioStreamMP3.new()
+	bark.stream.data = bark_file.get_buffer(bark_file.get_length())
+	bark.autoplay = true
+	get_parent().add_child(bark)
+
 
 func _process(delta):
 	if moving_forward:
