@@ -7,7 +7,7 @@ signal laser_hit_something
 var hp: int = 50
 
 func _ready():
-	pass
+	get_node("AnimatedSprite2D").play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,4 +27,4 @@ func _on_area_2d_area_entered(area):
 func _on_lasers_body_entered(body):
 	print(body)
 	if (body.is_in_group("player")):
-		body.queue_free()
+		body.death()

@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c32fjw6ib3blx"]
+[gd_scene load_steps=6 format=3 uid="uid://c32fjw6ib3blx"]
 
+[ext_resource type="Texture2D" uid="uid://dcwakxjcjrvbq" path="res://Assets/Sprites/amazon_office.webp" id="1_mnlx6"]
 [ext_resource type="PackedScene" uid="uid://c1x8f5xeaffkl" path="res://LongPlatform.tscn" id="1_q2h6j"]
 [ext_resource type="PackedScene" uid="uid://cidspdub7fpf" path="res://Player.tscn" id="2_ucbpg"]
 [ext_resource type="PackedScene" uid="uid://cfl7se787swhj" path="res://Boss1.tscn" id="3_8dkqf"]
 [ext_resource type="PackedScene" uid="uid://fesrx1iyopkq" path="res://BossHealthBar.tscn" id="4_6pxwp"]
 
 [node name="Scene3" type="Node2D"]
+
+[node name="AmazonOffice" type="Sprite2D" parent="."]
+position = Vector2(587.5, 335)
+scale = Vector2(1.11059, 1)
+texture = ExtResource("1_mnlx6")
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("1_q2h6j")]
 position = Vector2(584, 542)

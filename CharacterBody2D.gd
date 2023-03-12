@@ -37,6 +37,8 @@ func _physics_process(delta):
 		get_node("/root/PlayerVariables").x_position = 1150
 		get_node("/root/PlayerVariables").curr_scene -= 1
 		get_tree().change_scene_to_file("res://Scene" + str(get_node("/root/PlayerVariables").curr_scene)+ ".tscn")
+	if position.y > 1000:
+		death()
 	if velocity.x < 0:
 		sprite.flip_h = true
 	elif velocity.x > 0:
@@ -50,7 +52,10 @@ func _physics_process(delta):
 
 func on_bullet_collision(body: Node2D):
 	if "player" in body.get_groups():
-		get_tree().change_scene_to_file("res://Scene1.tscn")
-		PlayerVariables.curr_scene = 1
-		PlayerVariables.x_position = 163
-		PlayerVariables.y_position = 300
+		death()
+
+func death():
+	get_tree().change_scene_to_file("res://Scene1.tscn")
+	PlayerVariables.curr_scene = 1
+	PlayerVariables.x_position = 163
+	PlayerVariables.y_position = 300

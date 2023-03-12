@@ -1,35 +1,88 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfl7se787swhj"]
+[gd_scene load_steps=15 format=3 uid="uid://cfl7se787swhj"]
 
 [ext_resource type="Script" path="res://Boss1.gd" id="1_njp4d"]
-[ext_resource type="Texture2D" uid="uid://c20ukpy7fx2em" path="res://icon.svg" id="2_g72im"]
+[ext_resource type="Texture2D" uid="uid://0b4ggbpsik6x" path="res://Assets/Sprites/JohnMonfort-Sheet.png" id="2_crty5"]
 [ext_resource type="Script" path="res://Lasers.gd" id="3_18x7l"]
+[ext_resource type="Texture2D" uid="uid://c383hbbymr5ap" path="res://Assets/Sprites/Leadership Principle Pulverizer.png" id="4_0ddog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0f38"]
+atlas = ExtResource("2_crty5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlpi1"]
+atlas = ExtResource("2_crty5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwp34"]
+atlas = ExtResource("2_crty5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb4hr"]
+atlas = ExtResource("2_crty5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v041"]
+atlas = ExtResource("2_crty5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73c0q"]
+atlas = ExtResource("2_crty5")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tisw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0f38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlpi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwp34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb4hr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v041")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73c0q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2wj0"]
-size = Vector2(128, 127)
+size = Vector2(184, 207.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v50jw"]
-size = Vector2(2139, 51)
+size = Vector2(1558, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjoia"]
-size = Vector2(53, 1403)
+size = Vector2(53, 1155)
 
 [node name="StaticBody2D" type="StaticBody2D" groups=["boss", "enemy"]]
 script = ExtResource("1_njp4d")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 4
-visibility_layer = 5
-z_index = 1
-texture = ExtResource("2_g72im")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+texture_filter = 1
+position = Vector2(13, -21)
+scale = Vector2(7.40625, 6.625)
+sprite_frames = SubResource("SpriteFrames_tisw2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -0.5)
+position = Vector2(3, -21)
 shape = SubResource("RectangleShape2D_c2wj0")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, -1)
+visible = false
+position = Vector2(0, -18.8125)
 shape = SubResource("RectangleShape2D_c2wj0")
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -44,21 +97,22 @@ disabled = true
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Lasers"]
-position = Vector2(1, 0)
+position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_hjoia")
 disabled = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D/Lasers"]
-modulate = Color(1, 1, 1, 0.00392157)
-position = Vector2(1.50005, -0.122406)
+texture_filter = 1
+position = Vector2(1.50004, 1.21256)
 rotation = 1.5708
-scale = Vector2(11.0412, 0.412219)
-texture = ExtResource("2_g72im")
+scale = Vector2(9.0598, 3.32574)
+texture = ExtResource("4_0ddog")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Lasers"]
-position = Vector2(4.50003, 0)
-scale = Vector2(16.7266, 0.390625)
-texture = ExtResource("2_g72im")
+texture_filter = 1
+position = Vector2(-4.57764e-05, -0.499999)
+scale = Vector2(12.1875, 3.3125)
+texture = ExtResource("4_0ddog")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Node2D/Lasers" to="." method="_on_lasers_body_entered"]
