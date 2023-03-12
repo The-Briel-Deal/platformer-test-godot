@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c32fjw6ib3blx"]
+
+[ext_resource type="PackedScene" uid="uid://c1x8f5xeaffkl" path="res://LongPlatform.tscn" id="1_q2h6j"]
+[ext_resource type="PackedScene" uid="uid://cidspdub7fpf" path="res://Player.tscn" id="2_ucbpg"]
+[ext_resource type="PackedScene" uid="uid://cfl7se787swhj" path="res://Boss1.tscn" id="3_8dkqf"]
+[ext_resource type="PackedScene" uid="uid://fesrx1iyopkq" path="res://BossHealthBar.tscn" id="4_6pxwp"]
+
+[node name="Scene3" type="Node2D"]
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_q2h6j")]
+position = Vector2(584, 542)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_q2h6j")]
+position = Vector2(940, 466)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_q2h6j")]
+position = Vector2(217, 462)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ucbpg")]
+position = Vector2(106, 323)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("3_8dkqf")]
+position = Vector2(581, 311)
+
+[node name="BossHealthBar" parent="." instance=ExtResource("4_6pxwp")]
+position = Vector2(587, 78)

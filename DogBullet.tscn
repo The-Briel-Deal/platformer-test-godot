@@ -7,6 +7,7 @@
 radius = 1.51327
 
 [node name="DogBullet" type="Area2D"]
+z_index = 4
 scale = Vector2(6, 6)
 script = ExtResource("1_tsixl")
 
