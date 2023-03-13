@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ducp6nk6k16wh"]
+
+[ext_resource type="AudioStream" uid="uid://w2yuwdf27jda" path="res://Assets/Audio/tomp3.cc - twenty one pilots Car Radio OFFICIAL VIDEO.mp3" id="1_41bs0"]
+
+[node name="bg_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_41bs0")
+autoplay = true
